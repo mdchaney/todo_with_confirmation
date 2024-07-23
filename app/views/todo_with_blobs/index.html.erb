@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Todo with blobs</h1>
+
+<div id="todo_with_blobs">
+  <% @todo_with_blobs.each do |todo_with_blob| %>
+    <%= render todo_with_blob %>
+    <p>
+      <%= link_to "Show this todo with blob", todo_with_blob %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New todo with blob", new_todo_with_blob_path %>

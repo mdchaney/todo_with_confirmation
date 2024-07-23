@@ -1,0 +1,37 @@
+<h1>New todo with blob</h1>
+
+<div>
+  <strong>Body:</strong>
+  <%= @todo_with_blob.body %>
+</div>
+
+<div>
+  <strong>Finished:</strong>
+  <%= @todo_with_blob.finished? ? "Yes" : "No" %>
+</div>
+
+<%= form_with(model: @todo_with_blob, url: redo_todo_with_blobs_path) do |form| %>
+  <!-- There should be no errors -->
+
+  <%= form.hidden_field :body %>
+  <%= form.hidden_field :finished %>
+
+  <div>
+    <%= form.submit "Make Changes" %>
+  </div>
+<% end %>
+
+<%= form_with(model: @todo_with_blob) do |form| %>
+
+  <%= hidden_field_tag :blob, @blob %>
+
+  <div>
+    <%= form.submit "Really Save" %>
+  </div>
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to "Back to todos", todos_path %>
+</div>

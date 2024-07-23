@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @todo_with_blob %>
+
+<div>
+  <%= link_to "Edit this todo with blob", edit_todo_with_blob_path(@todo_with_blob) %> |
+  <%= link_to "Back to todo with blobs", todo_with_blobs_path %>
+
+  <%= button_to "Destroy this todo with blob", @todo_with_blob, method: :delete %>
+</div>
