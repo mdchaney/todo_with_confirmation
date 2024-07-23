@@ -18,4 +18,9 @@ Rails.application.routes.draw do
     post :confirm, on: :collection
     post :redo, on: :collection
   end
+
+  resources :todo_with_sigs do
+    post :confirm, on: :collection
+    post :redo, on: :collection
+  end
 end

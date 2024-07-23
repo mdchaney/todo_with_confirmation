@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Todo with sigs</h1>
+
+<div id="todo_with_sigs">
+  <% @todo_with_sigs.each do |todo_with_sig| %>
+    <%= render todo_with_sig %>
+    <p>
+      <%= link_to "Show this todo with sig", todo_with_sig %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New todo with sig", new_todo_with_sig_path %>

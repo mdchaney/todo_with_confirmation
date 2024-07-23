@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @todo_with_sig %>
+
+<div>
+  <%= link_to "Edit this todo with sig", edit_todo_with_sig_path(@todo_with_sig) %> |
+  <%= link_to "Back to todo with sigs", todo_with_sigs_path %>
+
+  <%= button_to "Destroy this todo with sig", @todo_with_sig, method: :delete %>
+</div>
