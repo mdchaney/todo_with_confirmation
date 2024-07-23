@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Todos with pleases</h1>
+
+<div id="todo_with_pleases">
+  <% @todo_with_pleases.each do |todo_with_please| %>
+    <%= render todo_with_please %>
+    <p>
+      <%= link_to "Show this todos with please", todo_with_please %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New todos with please", new_todo_with_please_path %>

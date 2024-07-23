@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @todo_with_please %>
+
+<div>
+  <%= link_to "Edit this todos with please", edit_todo_with_please_path(@todo_with_please) %> |
+  <%= link_to "Back to todos with pleases", todo_with_pleases_path %>
+
+  <%= button_to "Destroy this todos with please", @todo_with_please, method: :delete %>
+</div>

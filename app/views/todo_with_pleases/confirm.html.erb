@@ -1,0 +1,40 @@
+<h1>New todo with please</h1>
+
+<div>
+  <strong>Body:</strong>
+  <%= @todo_with_please.body %>
+</div>
+
+<div>
+  <strong>Finished:</strong>
+  <%= @todo_with_please.finished? ? "Yes" : "No" %>
+</div>
+
+<%= form_with(model: @todo_with_please, url: redo_todo_with_pleases_path) do |form| %>
+  <!-- There should be no errors -->
+
+  <%= form.hidden_field :body %>
+  <%= form.hidden_field :finished %>
+
+  <div>
+    <%= form.submit "Make Changes" %>
+  </div>
+<% end %>
+
+<%= form_with(model: @todo_with_please) do |form| %>
+  <!-- There should be no errors -->
+
+  <%= form.hidden_field :body %>
+  <%= form.hidden_field :finished %>
+  <%= hidden_field_tag :please, "please" %>
+
+  <div>
+    <%= form.submit "Really Save" %>
+  </div>
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to "Back to todos", todos_path %>
+</div>
