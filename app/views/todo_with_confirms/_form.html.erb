@@ -1,0 +1,17 @@
+<%= form_with(model: todo_with_confirm, url: confirm_todo_with_confirms_path) do |form| %>
+  <!-- There should be no errors -->
+
+  <div>
+    <%= form.label :body, style: "display: block" %>
+    <%= form.text_field :body %>
+  </div>
+
+  <div>
+    <%= form.label :finished, style: "display: block" %>
+    <%= form.check_box :finished %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

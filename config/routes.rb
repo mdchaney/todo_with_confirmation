@@ -13,4 +13,9 @@ Rails.application.routes.draw do
   resources :todo_with_pleases do
     post :redo, on: :collection
   end
+
+  resources :todo_with_confirms do
+    post :confirm, on: :collection
+    post :redo, on: :collection
+  end
 end

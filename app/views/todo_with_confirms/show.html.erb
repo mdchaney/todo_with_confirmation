@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @todo_with_confirm %>
+
+<div>
+  <%= link_to "Edit this todo with confirm", edit_todo_with_confirm_path(@todo_with_confirm) %> |
+  <%= link_to "Back to todo with confirms", todo_with_confirms_path %>
+
+  <%= button_to "Destroy this todo with confirm", @todo_with_confirm, method: :delete %>
+</div>

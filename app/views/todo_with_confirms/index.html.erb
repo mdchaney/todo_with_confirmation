@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Todo with confirms</h1>
+
+<div id="todo_with_confirms">
+  <% @todo_with_confirms.each do |todo_with_confirm| %>
+    <%= render todo_with_confirm %>
+    <p>
+      <%= link_to "Show this todo with confirm", todo_with_confirm %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New todo with confirm", new_todo_with_confirm_path %>
