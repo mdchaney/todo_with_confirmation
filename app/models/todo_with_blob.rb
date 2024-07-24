@@ -11,12 +11,20 @@ class TodoWithBlob < ApplicationRecord
       end
   end
 
+  def as_json_string
+    attributes.except("id", "created_at", "updated_at").to_json
+  end
+
   def as_encrypted_blob
-    self.class.encryptor.encrypt_and_sign(attributes.except("id", "created_at", "updated_at").to_json)
+    self.class.encryptor.encrypt_and_sign(self.as_json_string)
+  end
+
+  def self.encrypted_blob_to_json(encrypted_blob)
+    JSON.parse(encryptor.decrypt_and_verify(encrypted_blob))
   end
 
   def self.from_encrypted_blob(encrypted_blob)
-    new(JSON.parse(encryptor.decrypt_and_verify(encrypted_blob)))
+    new(encrypted_blob_to_json(encrypted_blob))
   end
 
   validates :body, presence: true, length: { maximum: 100 }
